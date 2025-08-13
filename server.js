@@ -1,16 +1,22 @@
 // server.js
+const express = require('express');
+const path = require('path');
 const http = require('http');
+
+const app = express();
 
 const hostname = 'localhost';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  console.log("in /");
+
+  res.sendFile(path.join(__dirname, 'faceappTest.html'));
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+
+app.listen(port, () => console.log(`🚀 Backend ready at http://localhost:${port}`));
+
 
