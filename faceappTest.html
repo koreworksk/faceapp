@@ -30,18 +30,16 @@
       const conversationId = params.get('conversationId');
     }
     // window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
-    window.addEventListener('load', () => {
-      const params = new URLSearchParams(window.location.search);
-      const conversationId = params.get('conversationId');
+   window.addEventListener('load', () => {
+  const params = new URLSearchParams(window.location.search);
+  const conversationId = params.get('conversationId');
 
-      if (conversationId) {
-        window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
-      }
-
-
-      // Open the page automatically on load
-    
-    });
+  if (conversationId) {
+    setTimeout(() => {
+      window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
+    }, 100); // 100ms delay
+  }
+});
 
   </script>
 
@@ -49,3 +47,4 @@
 
 
 </html>
+
