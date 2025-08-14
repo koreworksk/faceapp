@@ -25,21 +25,12 @@
   <button onclick="openNewTab()">Open Tab</button>
 
   <script>
-    function openNewTab() {
+    window.addEventListener('load', () => {
       const params = new URLSearchParams(window.location.search);
-      const conversationId = params.get('conversationId');
-    }
-    // window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
-   window.addEventListener('load', () => {
-  const params = new URLSearchParams(window.location.search);
   const conversationId = params.get('conversationId');
-
-  if (conversationId) {
-    setTimeout(() => {
+      const urlToOpen = 'https://digital-uat.mashreq.com/faceapp';
       window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
-    }, 100); // 100ms delay
-  }
-});
+    });
 
   </script>
 
@@ -47,4 +38,5 @@
 
 
 </html>
+
 
