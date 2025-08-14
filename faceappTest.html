@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Open New Tab</title>
@@ -9,6 +10,7 @@
       text-align: center;
       margin-top: 100px;
     }
+
     button {
       padding: 10px 20px;
       font-size: 16px;
@@ -16,6 +18,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>Click the Button to Open a New Tab</h1>
@@ -25,24 +28,24 @@
     function openNewTab() {
       const params = new URLSearchParams(window.location.search);
       const conversationId = params.get('conversationId');
-      
-      // window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
-      window.addEventListener('load', () => {
+    }
+    // window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
+    window.addEventListener('load', () => {
       const params = new URLSearchParams(window.location.search);
       const conversationId = params.get('conversationId');
 
       if (conversationId) {
         window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
       }
-    }
 
-    // Open the page automatically on load
+
+      // Open the page automatically on load
     
     });
+
   </script>
 
 </body>
 
 
 </html>
-
