@@ -26,17 +26,18 @@
       const params = new URLSearchParams(window.location.search);
       const conversationId = params.get('conversationId');
       
-      window.open(`https://abc.com?conversationId=${conversationId}`, '_blank');
-    }
-
-    // Open the page automatically on load
-    window.addEventListener('load', () => {
+      // window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
+      window.addEventListener('load', () => {
       const params = new URLSearchParams(window.location.search);
       const conversationId = params.get('conversationId');
 
       if (conversationId) {
-        window.open(`https://abc.com?conversationId=${conversationId}`, '_blank');
+        window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}`, '_blank');
       }
+    }
+
+    // Open the page automatically on load
+    
     });
   </script>
 
@@ -44,3 +45,4 @@
 
 
 </html>
+
