@@ -22,15 +22,15 @@
 <body>
 
   <h1>Click the Button to Open a New Tab</h1>
-  <button onclick="openNewTab()">Open Tab</button>
+  <button id="openTabBtn" onclick="openNewTab()">Open Tab</button>
 
   <script>
     window.addEventListener('load', () => {
       const params = new URLSearchParams(window.location.search);
   const conversationId = params.get('conversationId');
-      const cifId = params.get('cifId');
+      const cifId = params.get('Id');
       const urlToOpen = 'https://digital-uat.mashreq.com/faceapp';
-      window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}&cifId=${cifId}`, '_blank');
+      window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}&Id=${cifId}`, '_blank');
     });
     
 
@@ -39,9 +39,9 @@
   document.getElementById('openTabBtn').addEventListener('click', () => {
     const params = new URLSearchParams(window.location.search);
     const conversationId = params.get('conversationId');
-    const cifId = params.get('cifId');
+    const cifId = params.get('Id');
     const urlToOpen = 'https://digital-uat.mashreq.com/faceapp';
-    window.open(`${urlToOpen}?conversationId=${conversationId}&cifId=${cifId}`, '_blank');
+    window.open(`${urlToOpen}?conversationId=${conversationId}&Id=${cifId}`, '_blank');
   });
 </script>
 
@@ -49,6 +49,7 @@
 
 
 </html>
+
 
 
 
