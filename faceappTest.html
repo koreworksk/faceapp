@@ -20,17 +20,22 @@
 </head>
 
 <body>
-
+  
   <h1>Click the Button to Open a New Tab</h1>
   <button id="openTabBtn" onclick="openNewTab()">Open Tab</button>
 
   <script>
+    let tabOpenedAutomatically = false;
     window.addEventListener('load', () => {
       const params = new URLSearchParams(window.location.search);
   const conversationId = params.get('conversationId');
       const cifId = params.get('Id');
       const urlToOpen = 'https://digital-uat.mashreq.com/faceapp';
-      window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}&Id=${cifId}`, '_blank');
+     const newTab = window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}&Id=${cifId}`, '_blank');
+      if (newTab) {
+        tabOpenedAutomatically = true;
+        document.getElementById('openTabBtn').style.display = 'none'; // Hide button
+      }
     });
     
 
@@ -49,6 +54,7 @@
 
 
 </html>
+
 
 
 
