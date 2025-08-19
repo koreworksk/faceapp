@@ -33,20 +33,23 @@
       window.open(`https://digital-uat.mashreq.com/faceapp?conversationId=${conversationId}&cifId=${cifId}`, '_blank');
     });
     
-   document.getElementById('openTabBtn').addEventListener('click', () => {
+
+  </script>
+  <script>
+  document.getElementById('openTabBtn').addEventListener('click', () => {
     const params = new URLSearchParams(window.location.search);
     const conversationId = params.get('conversationId');
     const cifId = params.get('cifId');
     const urlToOpen = 'https://digital-uat.mashreq.com/faceapp';
     window.open(`${urlToOpen}?conversationId=${conversationId}&cifId=${cifId}`, '_blank');
   });
-
-  </script>
+</script>
 
 </body>
 
 
 </html>
+
 
 
 
